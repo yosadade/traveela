@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     padding: 24,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#FFFFFF',
   },
   back: {
     padding: 16,
