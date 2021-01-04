@@ -27,6 +27,7 @@ export default TextInput;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 24,
+    marginTop: 16,
   },
   label: {
     fontFamily: 'Poppins-Regular',

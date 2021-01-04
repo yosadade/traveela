@@ -5,8 +5,8 @@ import {Header, TextInput, Gap, Button} from '../../components';
 const SignIn = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header />
-      <Gap height={50} />
+      <Header title="Sign In" subTitle="Find your best over destination" />
+      <Gap height={34} />
       <TextInput placeholder="Type your email address" label="Email" />
       <TextInput
         secureTextEntry
@@ -19,7 +19,7 @@ const SignIn = ({navigation}) => {
       <Button
         title="Create New Account"
         bgColor="#f96d01"
-        onPress={() => navigation.replace('SignUp')}
+        onPress={() => navigation.navigate('SignUp')}
       />
     </View>
   );
