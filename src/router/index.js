@@ -1,26 +1,32 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {Splash, SignIn, SignUp} from '../pages';
+
+const Stack = createStackNavigator();
 
 const Router = () => {
   return (
-    <View style={styles.page}>
-      <Text style={styles.title}>Traveela</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
   );
 };
 
 export default Router;
 
-const styles = StyleSheet.create({
-  page: {
-    flex: 1,
-    backgroundColor: '#2B9FDC',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 50,
-    color: '#FFFFFF',
-  },
-});
+const styles = StyleSheet.create({});
