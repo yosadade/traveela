@@ -1,9 +1,32 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Splash, SignIn, SignUp, UploadPhoto} from '../pages';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  Splash,
+  SignIn,
+  SignUp,
+  UploadPhoto,
+  Home,
+  Maps,
+  Bookmark,
+  Profile,
+} from '../pages';
+import {BottomNavigator} from '../components';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const MainApp = () => {
+  return (
+    <Tab.Navigator tabBar={(props) => <BottomNavigator {...props} />}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Maps" component={Maps} />
+      <Tab.Screen name="Bookmark" component={Bookmark} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
+  );
+};
 
 const Router = () => {
   return (
@@ -26,6 +49,11 @@ const Router = () => {
       <Stack.Screen
         name="UploadPhoto"
         component={UploadPhoto}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MainApp"
+        component={MainApp}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

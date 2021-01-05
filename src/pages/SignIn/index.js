@@ -1,29 +1,53 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useRef, useState} from 'react';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import {Header, TextInput, Gap, Button} from '../../components';
+import {ICEyeOn, ICEyeOff} from '../../assets';
 
 const SignIn = ({navigation}) => {
+  const refPass = useRef(null);
+  const [icon, setIcon] = useState(<ICEyeOff />);
+  const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+  const onHandleIcon = () => {
+    setSecureTextEntry(!secureTextEntry);
+    setIcon(secureTextEntry ? <ICEyeOff /> : <ICEyeOn />);
+  };
   return (
-    <View style={styles.page}>
-      <Header title="Sign In" subTitle="Find your best over destination" />
-      <Gap height={34} />
-      <View style={styles.container}>
-        <TextInput placeholder="Type your email address" label="Email" />
-        <TextInput
-          secureTextEntry
-          placeholder="Type your email password"
-          label="Password"
-        />
-        <Gap height={24} />
-        <Button title="Sign In" onPress={() => {}} />
-        <Gap height={12} />
-        <Button
-          title="Create New Account"
-          bgColor="#f96d01"
-          onPress={() => navigation.navigate('SignUp')}
-        />
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{flexGrow: 1}}>
+      <View style={styles.page}>
+        <Header title="Sign In" subTitle="Find your best over destination" />
+        <Gap height={34} />
+        <View style={styles.container}>
+          <TextInput
+            placeholder="Type your email address"
+            label="Email"
+            onSubmitEditing={() => refPass.current.focus()}
+          />
+          <TextInput
+            secureTextEntry={secureTextEntry}
+            icon={icon}
+            placeholder="Type your email password"
+            label="Password"
+            refPass={refPass}
+            onPressIcon={onHandleIcon}
+          />
+          <Gap height={24} />
+          <Button
+            title="Sign In"
+            onPress={() => navigation.replace('MainApp')}
+          />
+          <Gap height={12} />
+          <Button
+            title="Create New Account"
+            bgColor="#f96d01"
+            onPress={() => navigation.navigate('SignUp')}
+          />
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
