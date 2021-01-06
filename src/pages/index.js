@@ -6,5 +6,16 @@ import Home from './Home';
 import Maps from './Maps';
 import Bookmark from './Bookmark';
 import Profile from './Profile';
+import GetStarted from './GetStarted';
 
-export {Splash, SignIn, SignUp, UploadPhoto, Home, Maps, Bookmark, Profile};
+export {
+  Splash,
+  SignIn,
+  SignUp,
+  UploadPhoto,
+  Home,
+  Maps,
+  Bookmark,
+  Profile,
+  GetStarted,
+};

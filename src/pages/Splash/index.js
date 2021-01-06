@@ -1,14 +1,16 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {ICAirplan} from '../../assets';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('SignIn');
+      navigation.replace('GetStarted');
     }, 3000);
   });
   return (
     <View style={styles.page}>
+      <ICAirplan />
       <Text style={styles.title}>Traveela</Text>
     </View>
   );

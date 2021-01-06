@@ -9,6 +9,7 @@ import ICBookmark from './Bookmark.svg';
 import ICBookmarkOff from './bookmark-off.svg';
 import ICProfile from './profile.svg';
 import ICProfileOff from './profile-off.svg';
+import ICAirplan from './airplan.svg';
 
 export {
   ICArrowBack,
@@ -22,4 +23,5 @@ export {
   ICBookmarkOff,
   ICProfile,
   ICProfileOff,
+  ICAirplan,
 };

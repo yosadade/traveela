@@ -11,6 +11,7 @@ import {
   Maps,
   Bookmark,
   Profile,
+  GetStarted,
 } from '../pages';
 import {BottomNavigator} from '../components';
 
@@ -34,6 +35,11 @@ const Router = () => {
       <Stack.Screen
         name="Splash"
         component={Splash}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="GetStarted"
+        component={GetStarted}
         options={{headerShown: false}}
       />
       <Stack.Screen
