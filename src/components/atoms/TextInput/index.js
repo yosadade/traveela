@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 const TextInput = ({
+  bgColor,
   label,
   value,
   onChangeText,
@@ -18,6 +19,7 @@ const TextInput = ({
   icon,
   onPressIcon,
   bottom = 0,
+  border = 0.5,
 }) => {
   return (
     <View style={styles.container(bottom)}>
@@ -27,7 +29,7 @@ const TextInput = ({
         ref={refPass}
         onSubmitEditing={onSubmitEditing}
         placeholder={placeholder}
-        style={styles.input}
+        style={styles.input(bgColor, border)}
         value={value}
         onChangeText={onChangeText}
         icon={icon}
@@ -44,7 +46,6 @@ export default TextInput;
 const styles = StyleSheet.create({
   container: (bottom) => ({
     paddingHorizontal: 24,
-    marginTop: 16,
     marginBottom: bottom,
   }),
   label: {
@@ -53,13 +54,14 @@ const styles = StyleSheet.create({
     color: '#020202',
     marginBottom: 6,
   },
-  input: {
+  input: (bgColor, border) => ({
     fontFamily: 'Poppins-Light',
+    backgroundColor: bgColor,
     borderRadius: 8,
-    borderWidth: 0.5,
+    borderWidth: border,
     borderColor: '#8D92A3',
     padding: 10,
-  },
+  }),
   icon: {
     paddingHorizontal: 5,
     marginLeft: 'auto',

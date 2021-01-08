@@ -10,6 +10,9 @@ import ICBookmarkOff from './bookmark-off.svg';
 import ICProfile from './profile.svg';
 import ICProfileOff from './profile-off.svg';
 import ICAirplan from './airplan.svg';
+import ICSearch from './magnify';
+import ICStarOn from './ic_star.svg';
+import ICStarOff from './ic_star_normal.svg';
 
 export {
   ICArrowBack,
@@ -24,4 +27,7 @@ export {
   ICProfile,
   ICProfileOff,
   ICAirplan,
+  ICSearch,
+  ICStarOn,
+  ICStarOff,
 };
