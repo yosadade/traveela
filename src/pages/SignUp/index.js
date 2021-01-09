@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useRef, useState} from 'react';
 import {StyleSheet, ScrollView, View} from 'react-native';
 import {Header, TextInput, Gap, Button} from '../../components';
@@ -26,22 +27,30 @@ const SignUp = ({navigation}) => {
         />
         <Gap height={34} />
         <View style={styles.container}>
+          <Gap height={16} />
+
           <TextInput
             label="Full Name"
             placeholder="Type your full name"
             onSubmitEditing={() => refPass.current.focus()}
           />
+          <Gap height={16} />
+
           <TextInput
             label="Email Address"
             placeholder="Type your full email"
             onSubmitEditing={() => refPass.current.focus()}
             refPass={refPass}
           />
+          <Gap height={16} />
+
           <TextInput
             label="Phone Number"
             placeholder="Type your phone number"
             onSubmitEditing={() => refPass.current.focus()}
           />
+          <Gap height={16} />
+
           <TextInput
             secureTextEntry={secureTextEntry}
             bottom={-12}
@@ -49,6 +58,8 @@ const SignUp = ({navigation}) => {
             label="Password"
             placeholder="Type your password"
           />
+          <Gap height={16} />
+
           <TextInput
             secureTextEntry={secureTextEntry}
             bottom={-12}

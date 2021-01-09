@@ -1,11 +1,22 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {ICTelegram} from '../../../assets';
 
-const Button = ({title, bgColor = '#2B9FDC', onPress}) => {
+const Button = ({title, bgColor = '#2B9FDC', onPress, type}) => {
+  if (type === 'message') {
+    return (
+      <TouchableOpacity
+        activeOpacity={0.7}
+        style={styles.container(bgColor, type)}
+        onPress={onPress}>
+        <ICTelegram />
+      </TouchableOpacity>
+    );
+  }
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      style={styles.container(bgColor)}
+      style={styles.container(bgColor, type)}
       onPress={onPress}>
       <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
@@ -15,13 +26,20 @@ const Button = ({title, bgColor = '#2B9FDC', onPress}) => {
 export default Button;
 
 const styles = StyleSheet.create({
-  container: (bgColor) => ({
+  container: (bgColor, type) => ({
     backgroundColor: bgColor,
-    paddingVertical: 12,
-    marginHorizontal: 24,
+    paddingVertical: type === 'message' ? 10 : 12,
+    marginHorizontal: type === 'message' ? 27 : 24,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.5,
+    elevation: 5,
   }),
   title: {
     fontFamily: 'Poppins-Medium',

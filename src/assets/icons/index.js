@@ -13,6 +13,7 @@ import ICAirplan from './airplan.svg';
 import ICSearch from './magnify';
 import ICStarOn from './ic_star.svg';
 import ICStarOff from './ic_star_normal.svg';
+import ICTelegram from './telegram.svg';
 
 export {
   ICArrowBack,
@@ -30,4 +31,5 @@ export {
   ICSearch,
   ICStarOn,
   ICStarOff,
+  ICTelegram,
 };

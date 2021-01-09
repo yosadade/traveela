@@ -21,11 +21,14 @@ const SignIn = ({navigation}) => {
         <Header title="Sign In" subTitle="Find your best over destination" />
         <Gap height={34} />
         <View style={styles.container}>
+          <Gap height={16} />
           <TextInput
             placeholder="Type your email address"
             label="Email"
             onSubmitEditing={() => refPass.current.focus()}
           />
+          <Gap height={16} />
+
           <TextInput
             secureTextEntry={secureTextEntry}
             icon={icon}

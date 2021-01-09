@@ -7,6 +7,7 @@ import Maps from './Maps';
 import Bookmark from './Bookmark';
 import Profile from './Profile';
 import GetStarted from './GetStarted';
+import DestinationDetail from './DestinationDetail';
 
 export {
   Splash,
@@ -18,4 +19,5 @@ export {
   Bookmark,
   Profile,
   GetStarted,
+  DestinationDetail,
 };

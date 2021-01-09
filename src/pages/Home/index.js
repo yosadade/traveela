@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {
   HomeProfile,
@@ -6,17 +6,9 @@ import {
   DestinationCard,
   HomeTabSection,
 } from '../../components';
-import {
-  ICSearch,
-  IL1,
-  IL2,
-  ILMerbabu,
-  ILBeach1,
-  ILRiver1,
-  ILLake1,
-} from '../../assets';
+import {ICSearch, ILMerbabu, ILBeach1, ILLake1} from '../../assets';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const destination = [
     {
       id: 1,
@@ -27,7 +19,7 @@ const Home = () => {
     {
       id: 2,
       name: 'Indrayanti Beach',
-      rating: 4,
+      rating: 3,
       image: ILBeach1,
     },
     {
@@ -57,6 +49,7 @@ const Home = () => {
                   image={item.image}
                   name={item.name}
                   rating={item.rating}
+                  onPress={() => navigation.navigate('DestinationDetail')}
                 />
               );
             })}
