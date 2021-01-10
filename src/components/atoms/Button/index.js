@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {ICTelegram} from '../../../assets';
+import {ICTelegram, ICMiniBookmark} from '../../../assets';
 
 const Button = ({title, bgColor = '#2B9FDC', onPress, type}) => {
   if (type === 'message') {
@@ -9,7 +9,7 @@ const Button = ({title, bgColor = '#2B9FDC', onPress, type}) => {
         activeOpacity={0.7}
         style={styles.container(bgColor, type)}
         onPress={onPress}>
-        <ICTelegram />
+        <ICMiniBookmark />
       </TouchableOpacity>
     );
   }

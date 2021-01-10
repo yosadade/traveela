@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Text, View, Dimensions} from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
@@ -38,7 +38,7 @@ const renderTabBar = (props) => (
 );
 
 const Montain = () => {
-  //   const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -51,13 +51,15 @@ const Montain = () => {
         image={ILMerbabu}
         price="230.0000"
         rating={4}
-        onPress={() => {}}
+        onPress={() => navigation.navigate('DestinationDetail')}
       />
     </View>
   );
 };
 
 const Beach = () => {
+  const navigation = useNavigation();
+
   return (
     <View
       style={{
@@ -70,7 +72,7 @@ const Beach = () => {
         image={ILBeach1}
         price="180.0000"
         rating={4}
-        onPress={() => {}}
+        onPress={() => navigation.navigate('DestinationDetail')}
       />
       <ItemListDestination
         name="Kintamani"
@@ -97,7 +99,7 @@ const Lake = () => {
         image={ILLake1}
         price="10.0000"
         rating={4}
-        onPress={() => {}}
+        onPress={() => navigation.navigate('DestinationDetail')}
       />
     </View>
   );
@@ -117,7 +119,7 @@ const River = () => {
         image={ILRiver1}
         price="10.0000"
         rating={4}
-        onPress={() => {}}
+        onPress={() => navigation.navigate('DestinationDetail')}
       />
     </View>
   );
@@ -125,7 +127,7 @@ const River = () => {
 
 const initialLayout = {width: Dimensions.get('window').width};
 
-const HomeTabSection = () => {
+const HomeTabSection = ({onPress}) => {
   const [index, setIndex] = useState(0);
   const [routes] = React.useState([
     {key: '1', title: 'Montain'},
@@ -142,6 +144,7 @@ const HomeTabSection = () => {
   });
   return (
     <TabView
+      onPress={onPress}
       navigationState={{index, routes}}
       renderScene={renderScene}
       onIndexChange={setIndex}

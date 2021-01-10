@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,41 +8,66 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Button} from '../../components';
-import {ICArrowBack, ILMerbabu, ICTelegram} from '../../assets';
+import {ILMerbabu, ICBackWhite} from '../../assets';
 
 const Doctor = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <ImageBackground source={ILMerbabu} style={styles.cover}>
-        <TouchableOpacity
-          style={styles.back}
-          onPress={() => navigation.goBack()}>
-          <ICArrowBack />
-        </TouchableOpacity>
-      </ImageBackground>
-      <View style={styles.content}>
-        <TouchableOpacity style={styles.message}>
-          <Button type="message" bgColor="#FFFFFF" />
-        </TouchableOpacity>
-        <View style={styles.mainContent}>
-          <Text style={styles.title}>Merbabu Montain, Kabupaten Magelang</Text>
-          <Text style={styles.desc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae
-            ex ac turpis mollis pretium. Pellentesque elementum, libero iaculis
-            porta aliquet, nisl neque fermentum erat, vitae sagittis tellus arcu
-            id eros. Morbi eu nulla in nunc imperdiet dignissim. Praesent
-            dapibus dictum mauris, et vestibulum velit efficitur sagittis.
-          </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ImageBackground source={ILMerbabu} style={styles.cover}>
+          <TouchableOpacity
+            style={styles.back}
+            onPress={() => navigation.goBack()}>
+            <ICBackWhite />
+          </TouchableOpacity>
+        </ImageBackground>
+        <View style={styles.content}>
+          <TouchableOpacity style={styles.message}>
+            <Button type="message" bgColor="#FFFFFF" />
+          </TouchableOpacity>
+          <View style={styles.mainContent}>
+            <Text style={styles.title}>
+              Merbabu Mountain, Kabupaten Magelang
+            </Text>
+            <Text style={styles.desc}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              vitae ex ac turpis mollis pretium. Pellentesque elementum, libero
+              iaculis porta aliquet, nisl neque fermentum erat, vitae sagittis
+              tellus arcu id eros. Morbi eu nulla in nunc imperdiet dignissim.
+              Praesent dapibus dictum mauris, et vestibulum velit efficitur
+              sagittis
+              {'\n'}
+              {'\n'}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              vitae ex ac turpis mollis pretium. Pellentesque elementum, libero
+              iaculis porta aliquet, nisl neque fermentum erat, vitae sagittis
+              tellus arcu id eros. Morbi eu nulla in nunc imperdiet dignissim.
+              Praesent dapibus dictum mauris, et vestibulum velit efficitur
+              sagittis`
+              {'\n'}
+              {'\n'}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              vitae ex ac turpis mollis pretium. Pellentesque elementum, libero
+              iaculis porta aliquet, nisl neque fermentum erat, vitae sagittis
+              tellus arcu id eros. Morbi eu nulla in nunc imperdiet dignissim.
+              Praesent dapibus dictum mauris, et vestibulum velit efficitur
+              sagittis`
+            </Text>
+            <Text style={styles.label}>Facilities:</Text>
+            <Text style={styles.desc}>
+              Ticket, tour guide, breakfast, tent, carrier, sleeping bag,
+              nesting, led, parking
+            </Text>
+          </View>
         </View>
-      </View>
+      </ScrollView>
       <View style={styles.footer}>
         <View style={styles.priceContainer}>
           <Text style={styles.labelPrice}>Total Price:</Text>
           <Text style={styles.priceTotal}>IDR 320.000</Text>
-          {/* <Numbers number={totalItem * price} style={styles.priceTotal} /> */}
         </View>
         <View style={styles.button}>
-          <Button title="Order Now" />
+          <Button title="Booking Now" />
         </View>
       </View>
     </View>
@@ -97,11 +122,18 @@ const styles = StyleSheet.create({
     color: '#8D92A3',
     marginBottom: 16,
   },
+  label: {
+    fontSize: 14,
+    fontFamily: 'Poppins-Regular',
+    color: '#020202',
+    marginBottom: 4,
+  },
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 17,
     marginLeft: 16,
+    backgroundColor: '#FFFFFF',
   },
   priceContainer: {
     flex: 1,

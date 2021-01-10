@@ -14,6 +14,9 @@ import ICSearch from './magnify';
 import ICStarOn from './ic_star.svg';
 import ICStarOff from './ic_star_normal.svg';
 import ICTelegram from './telegram.svg';
+import ICMiniBookmark from './mini_bookmark.svg';
+import ICMiniBookmarkOff from './mini_bookmarkoff.svg';
+import ICBackWhite from './arrow_back_white.svg';
 
 export {
   ICArrowBack,
@@ -32,4 +35,7 @@ export {
   ICStarOn,
   ICStarOff,
   ICTelegram,
+  ICMiniBookmark,
+  ICMiniBookmarkOff,
+  ICBackWhite,
 };
