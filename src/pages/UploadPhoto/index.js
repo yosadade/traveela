@@ -20,7 +20,7 @@ const UploadPhoto = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <Text style={styles.name}>Yosada Dede</Text>
-        <Text style={styles.job}>Software Developer</Text>
+        <Text style={styles.job}>qodr.yosadade@gmail.com</Text>
         <Button
           title="Upload and Continue"
           onPress={() => navigation.replace('MainApp')}

@@ -37,7 +37,7 @@ const renderTabBar = (props) => (
   />
 );
 
-const Montain = () => {
+const Mountain = () => {
   const navigation = useNavigation();
   return (
     <View
@@ -130,14 +130,14 @@ const initialLayout = {width: Dimensions.get('window').width};
 const HomeTabSection = ({onPress}) => {
   const [index, setIndex] = useState(0);
   const [routes] = React.useState([
-    {key: '1', title: 'Montain'},
+    {key: '1', title: 'Mountain'},
     {key: '2', title: 'Beach'},
     {key: '3', title: 'Lake'},
     {key: '4', title: 'River'},
   ]);
 
   const renderScene = SceneMap({
-    1: Montain,
+    1: Mountain,
     2: Beach,
     3: Lake,
     4: River,

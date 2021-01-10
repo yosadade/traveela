@@ -4,6 +4,7 @@ import HomeProfile from './HomeProfile';
 import DestinationCard from './DestinationCard';
 import HomeTabSection from './HomeTabSection';
 import ItemListDestination from './ItemListDestination';
+import ItemValue from './ItemValue';
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   DestinationCard,
   HomeTabSection,
   ItemListDestination,
+  ItemValue,
 };

@@ -2,14 +2,14 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {ICTelegram, ICMiniBookmark} from '../../../assets';
 
-const Button = ({title, bgColor = '#2B9FDC', onPress, type}) => {
+const Button = ({title, bgColor = '#2B9FDC', onPress, type, icon}) => {
   if (type === 'message') {
     return (
       <TouchableOpacity
         activeOpacity={0.7}
         style={styles.container(bgColor, type)}
         onPress={onPress}>
-        <ICMiniBookmark />
+        {icon}
       </TouchableOpacity>
     );
   }
