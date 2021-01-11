@@ -17,6 +17,7 @@ import ICTelegram from './telegram.svg';
 import ICMiniBookmark from './mini_bookmark.svg';
 import ICMiniBookmarkOff from './mini_bookmarkoff.svg';
 import ICBackWhite from './arrow_back_white.svg';
+import ICRight from './arrow_right.svg';
 
 export {
   ICArrowBack,
@@ -38,4 +39,5 @@ export {
   ICMiniBookmark,
   ICMiniBookmarkOff,
   ICBackWhite,
+  ICRight,
 };
